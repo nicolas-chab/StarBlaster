@@ -33,6 +33,10 @@ public class Health : MonoBehaviour
 
     
     } 
+    public int GetHealth()
+    {
+        return health;
+    }
     public void TakeDamage(int damage)
     {
         if (audioManager != null)
