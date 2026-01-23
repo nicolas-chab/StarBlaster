@@ -1,7 +1,7 @@
 using System.Collections;
 using NUnit.Framework;
 using Unity.Mathematics;
-using UnityEditor.Search;
+
 using UnityEngine;
 
 public class Shooter : MonoBehaviour

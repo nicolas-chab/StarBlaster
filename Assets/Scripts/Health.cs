@@ -10,11 +10,13 @@ public class Health : MonoBehaviour
    CameraShake cameraShake;
    AudioManager audioManager;
    ScoreKeeper scoreKeeper;
+   LevelManager levelManager;
     void Start()
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();
         audioManager=FindFirstObjectByType<AudioManager>();
         scoreKeeper = FindFirstObjectByType<ScoreKeeper>();
+        levelManager=FindFirstObjectByType<LevelManager>();
     }
     void OnTriggerEnter2D(Collider2D other) 
     {
@@ -54,6 +56,10 @@ public class Health : MonoBehaviour
     }
     void Die()
     {
+        if (isPlayer)
+        {
+            levelManager.LoadGameOver();
+        }
         if (!isPlayer && scoreKeeper != null)
         {
             scoreKeeper.modifyscore(scorevalue);
